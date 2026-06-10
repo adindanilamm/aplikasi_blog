@@ -3,9 +3,11 @@
 @section('title', $artikel->judul)
 
 @section('main')
-<div class="mb-3 fade-up">
-    <a href="{{ route('blog.index') }}" class="read-more">← Kembali ke daftar</a>
-</div>
+<nav class="crumb fade-up">
+    <a href="{{ route('blog.index') }}">Beranda</a> /
+    <a href="{{ route('blog.kategori', $artikel->kategori->id) }}">{{ $artikel->kategori->nama_kategori }}</a> /
+    <span>{{ \Illuminate\Support\Str::limit($artikel->judul, 40) }}</span>
+</nav>
 
 <article class="post-card fade-up d1">
     <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" class="article-hero">
@@ -28,6 +30,27 @@
         </div>
 
         <div class="article-body">{!! nl2br(e($artikel->isi)) !!}</div>
+
+        <div class="mt-4 pt-3" style="border-top:1px solid var(--line);">
+            <a href="{{ route('blog.index') }}" class="btn btn-soft px-3">← Kembali ke Beranda</a>
+        </div>
     </div>
 </article>
+@endsection
+
+@section('sidebar')
+<div class="side-card fade-up d1 p-4">
+    <div class="side-card-title mb-3">Artikel Terkait</div>
+    @forelse($artikelTerkait as $rel)
+        <a href="{{ route('blog.show', $rel->id) }}" class="terkait-row">
+            <img src="{{ asset('storage/gambar/' . $rel->gambar) }}" class="terkait-thumb" alt="{{ $rel->judul }}">
+            <div>
+                <div class="terkait-judul">{{ \Illuminate\Support\Str::limit($rel->judul, 50) }}</div>
+                <div class="post-meta">{{ $rel->hari_tanggal }}</div>
+            </div>
+        </a>
+    @empty
+        <p class="post-meta mb-0">Belum ada artikel terkait dari kategori ini.</p>
+    @endforelse
+</div>
 @endsection
