@@ -1,10 +1,8 @@
 # Sistem Manajemen Blog (CMS) + Halaman Pengunjung — aplikasi-blog
 
-> Lengkapi bagian **[ISI ...]** di bawah sebelum dikumpulkan.
-
 ## Identitas
-- **Nama Lengkap:** [ISI NAMA LENGKAP]
-- **NIM:** [ISI NIM]
+- **Nama Lengkap:** Adinda Nilam Cahya Putri Sina
+- **NIM:** 240605110137
 
 ## Deskripsi Singkat
 Aplikasi **Sistem Manajemen Blog (CMS)** berbasis **Laravel** dengan database `db_blog`.
@@ -89,7 +87,5 @@ Laravel 10 · PHP 8.1+ · MySQL (`db_blog`) · Blade · Bootstrap 5 · CSS kusto
 | Kelola Kategori | `/kategori` | Login |
 
 ## Video Demonstrasi
-- **YouTube:** [ISI TAUTAN VIDEO YOUTUBE]
+- **YouTube:** (https://youtu.be/KsJvahCvbHA?si=ncOgwKxjPXwzm47E)
 
----
-Dibuat untuk UAS Pemrograman Web — Semester Genap 2025/2026.
